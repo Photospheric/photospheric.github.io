@@ -1,0 +1,104 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    background: #F6FCDF;
+    color: #1A1A19;
+    font-size: 14px;
+    font-weight: 400;
+    font-family:sans-serif;
+}
+#panView {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#panorama {
+    width: 100%;
+    flex-grow: 1;
+}
+#toolbar {
+    padding-left: 10px;
+    display: flex;
+    padding: 5px;
+    align-items: center;
+}
+button {
+    outline: 0;
+    appearance: none;
+    padding: 0px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: rgb(249, 251, 250);
+    border: 1px solid rgb(137, 151, 155);
+    box-shadow: rgb(6 22 33 / 30%) 0px 1px 2px;
+    color: rgb(61, 79, 88);
+    font-size: 14px;
+    font-weight: 400;
+    height: 36px;
+    /*transition: all 150ms ease-in-out 0s;
+    :hover {
+        color: rgb(61, 79, 88);
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgb(93, 108, 116);
+        box-shadow: rgb(0 0 0 / 30%) 0px 4px 4px, rgb(231 238 236) 0px 0px 0px 3px;
+    }*/
+}
+#infoButt {
+    margin-left: auto;
+    visibility: hidden;
+}
+#info {
+    position: absolute;
+    background: #F6FCDF;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    height: 100vh;
+    width: 100%;
+    visibility: hidden;
+}
+#backsvg {
+    height: auto;
+    width: auto;
+    padding: 0;
+}
+
+#title {
+    font-weight: 400;
+}
+
+#author {
+    color: #859F3D;
+    font-size: small;
+}
+
+#titleDiv {
+    display: flex; 
+    flex-direction: column; 
+    margin-left: 15px;
+}
+#errorMsg {
+    width: 100vw;
+    color: #9f3d3d;
+    font-weight: bold;
+    font-size: large;
+    overflow-wrap: break-word;
+}
+
+.shiny {
+    -webkit-mask-image: linear-gradient(45deg,#000 25%,rgba(0,0,0,.2) 50%,#000 75%);
+    mask-image: linear-gradient(45deg,#000 25%,rgba(0,0,0,.2) 50%,#000 75%);
+    -webkit-mask-size: 800%;
+    mask-size: 800%;
+    -webkit-mask-position: 120%;
+    mask-position: 120%;
+}
+
+.shiny:hover {
+    transition: mask-position 2s ease,-webkit-mask-position 2s ease;
+    -webkit-mask-position: 0;
+    mask-position: 0;
+    opacity: 1;
+}

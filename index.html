@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="homepage/style.css">
+    <title>Photospheric</title>
+    <link rel="stylesheet" href="homepage/highlight/styles/intellij-light.css">
+    <script src="homepage/highlight/highlight.min.js"></script>
+</head>
+<body>
+    <img src="other/logo.svg" id="logo"/>
+    <span id = "wisdom"></span>
+    <div id = "info">
+            <h1 style="text-align: center;">Based on <a href='https://pannellum.org/'>Panellum</a>,<br> for sharing panoramic images quickly</h1>
+            <div id = "leftTextSpan">
+                Photospheric is a tool I created to provide quick access to my panoramic images.
+                You can also provide a quick way to view your panoramas through a special URL.
+                <br><br>
+                <h2 style="text-align: center;">Quickstart</h2>
+                <h3>Step 1</h3>
+                Firstly, you need to host a panoramic image as well as an information XML file.<br>
+                The XML file structure looks something like this:
+                <pre style="text-align: left;">
+                    <code class="language-xml">&lt;PanoramaInfo&gt;
+    &lt;PanoramaURL url=&quot;PANORAMIC IMAGE URL&quot;/&gt;
+    &lt;Title&gt;PANORAMA TITLE HERE&lt;/Title&gt;
+    &lt;Author&gt;AUTHOR NAME HERE&lt;/Author&gt;
+    &lt;InfoPageHTML&gt;
+        THIS TAG CONTAINS HTML SHOWN IN THE &quot;image info&quot; TAB.
+        IT CAN CONTAIN ANY TYPE OF TAGS OR TEXT.
+    &lt;/InfoPageHTML&gt;
+&lt;/PanoramaInfo&gt;</code>
+                </pre>
+                <details>
+                    <summary>XML code example</summary>
+                    <br>
+                    This example is hosted on:<br>
+                    <a href="https://raw.githubusercontent.com/Andryup/my-panoramas/refs/heads/main/data/1.xml">
+                        https://raw.githubusercontent.com/Andryup/my-panoramas/refs/heads/main/data/1.xml
+                    </a>
+                    <pre style="text-align: left;">
+                        <code class="language-xml">&lt;PanoramaInfo&gt;
+    &lt;PanoramaURL url=&quot;https://raw.githubusercontent.com/Andryup/my-panoramas/refs/heads/main/data/images/rosendal_plains_2_4k.jpg&quot;/&gt;
+    &lt;Title&gt;Rosendal Plains 2&lt;/Title&gt;
+    &lt;Author&gt;Dimitrios Savva &amp; Jarod Guest&lt;/Author&gt;
+    &lt;InfoPageHTML&gt;
+        Panoramic image downloaded from &lt;a href=&quot;https://polyhaven.com/&quot;&gt;Poly Haven&lt;/a&gt;:
+        &lt;br&gt;
+        https://polyhaven.com/a/rosendal_plains_2
+        &lt;h3&gt;Panoramic image location:&lt;/h3&gt;&lt;br/&gt;
+        &lt;iframe width=&quot;425&quot; height=&quot;350&quot; src=&quot;https://www.openstreetmap.org/export/embed.html?bbox=27.873025238513947%2C-28.49746754046511%2C27.876217067241672%2C-28.495775037370798&amp;layer=mapnik&amp;marker=-28.496621292310692%2C27.874621152877808&quot; style=&quot;border: 1px solid black&quot;&gt;&lt;/iframe&gt;&lt;br/&gt;&lt;small&gt;&lt;a href=&quot;https://www.openstreetmap.org/?mlat=-28.496621&amp;mlon=27.874621#map=19/-28.496621/27.874621&quot;&gt;View a bigger map&lt;/a&gt;&lt;/small&gt;
+        
+    &lt;/InfoPageHTML&gt;
+&lt;/PanoramaInfo&gt;</code>
+                    </pre>
+                </details>
+                <h3>Step 2</h3>
+                Now we can finally move on to making a Photospheric URL that can be shared:<br>
+                <pre><code>https://photospheric.github.io/view.html#xrf=&lt;XML FILE URL HERE&gt;</code></pre>
+                For example if our XML URL is:<br>
+                <i>https://raw.githubusercontent.com/Andryup/my-panoramas/refs/heads/main/data/1.xml</i>
+                <br><br>Then Photospheric URL will be:
+                <pre><code>https://photospheric.github.io/view.html#xrf=https://raw.githubusercontent.com/Andryup/my-panoramas/refs/heads/main/data/1.xml</code></pre>
+                You can also encode it with Base64 if you wish to:<br>
+                <pre><code>https://photospheric.github.io/view.html#xf=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FuZHJ5dXAvbXktcGFub3JhbWFzL3JlZnMvaGVhZHMvbWFpbi9kYXRhLzEueG1s</code></pre>
+            </div>
+    </div>
+</body>
+<script>hljs.highlightAll();</script>
+<script src="homepage/script.js"></script>
+</html>
